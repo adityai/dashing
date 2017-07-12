@@ -1,0 +1,45 @@
+current directory: /dashing/bundle/gems/thin-1.6.4/ext/thin_parser
+/usr/local/bin/ruby -r ./siteconf20170707-37-1go8p3z.rb extconf.rb
+checking for main() in -lc... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /dashing/bundle/extensions/x86_64-linux/2.3.0-static/thin-1.6.4/mkmf.log
+
+current directory: /dashing/bundle/gems/thin-1.6.4/ext/thin_parser
+make "DESTDIR=" clean
+make: Warning: File 'Makefile' has modification time 372020 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /dashing/bundle/gems/thin-1.6.4/ext/thin_parser
+make "DESTDIR="
+make: Warning: File 'Makefile' has modification time 372020 s in the future
+compiling parser.c
+compiling thin.c
+thin.c: In function 'Thin_HttpParser_alloc':
+thin.c:242:3: warning: implicit declaration of function 'thin_http_parser_init' [-Wimplicit-function-declaration]
+   thin_http_parser_init(hp);
+   ^
+thin.c: In function 'Thin_HttpParser_finish':
+thin.c:294:3: warning: implicit declaration of function 'thin_http_parser_finish' [-Wimplicit-function-declaration]
+   thin_http_parser_finish(http);
+   ^
+thin.c:296:3: warning: implicit declaration of function 'thin_http_parser_is_finished' [-Wimplicit-function-declaration]
+   return thin_http_parser_is_finished(http) ? Qtrue : Qfalse;
+   ^
+thin.c: In function 'Thin_HttpParser_execute':
+thin.c:334:5: warning: implicit declaration of function 'thin_http_parser_execute' [-Wimplicit-function-declaration]
+     thin_http_parser_execute(http, dptr, dlen, from);
+     ^
+thin.c:338:5: warning: implicit declaration of function 'thin_http_parser_has_error' [-Wimplicit-function-declaration]
+     if(thin_http_parser_has_error(http)) {
+     ^
+linking shared-object thin_parser.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /dashing/bundle/gems/thin-1.6.4/ext/thin_parser
+make "DESTDIR=" install
+make: Warning: File 'Makefile' has modification time 372003 s in the future
+/usr/bin/install -c -m 0755 thin_parser.so ./.gem.20170707-37-ubbmi2
+make: warning:  Clock skew detected.  Your build may be incomplete.
