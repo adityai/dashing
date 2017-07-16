@@ -10,7 +10,7 @@ twitter = Twitter::REST::Client.new do |config|
   config.access_token_secret = '8XQTvaSmGItTWe1fRB2FKDEbnwrm3KJ3uJEdUjDK3VXPC'
 end
 
-search_term = URI::encode('from:barrons')
+search_term = URI::encode('MarketUpdate')
 
 SCHEDULER.every '10m', :first_in => 0 do |job|
   begin
