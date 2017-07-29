@@ -10,11 +10,9 @@ twitter = Twitter::REST::Client.new do |config|
   config.access_token_secret = '8XQTvaSmGItTWe1fRB2FKDEbnwrm3KJ3uJEdUjDK3VXPC'
 end
 
-search_term = URI::encode('@BlueShieldCA')
-
 SCHEDULER.every '10m', :first_in => 0 do |job|
   begin
-    tweets = twitter.search("@BlueShieldCA")
+    tweets = twitter.search("@AdityaInapurapu")
 
     if tweets
       tweets = tweets.map do |tweet|
