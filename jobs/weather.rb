@@ -29,7 +29,7 @@ end
 
 
 def temperature_units
-  'metric'.eql?(UNITS) ? 'C' : 'K'
+  'metric'.eql?(UNITS) ? 'C' : 'F'
 end
 
 def color_temperature(temp_celsius)
