@@ -1,4 +1,4 @@
 test:
   override:
-	echo "Hello"
+  - echo "Hello"
 
