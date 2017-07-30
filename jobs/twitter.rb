@@ -1,17 +1,18 @@
 require 'twitter'
 
 
-#### Get your twitter keys & secrets:
-#### https://dev.twitter.com/docs/auth/tokens-devtwittercom
-twitter = Twitter::REST::Client.new do |config|
-  config.consumer_key = 'T2Ea8o3Hdr5gLM1EsZER0BCjn'
-  config.consumer_secret = 'qt8NhAHqUGjz50eAWwraR2tZPTAIONAJglAbDoI88JXScn423Q'
-  config.access_token = '100622301-mArSE3ZDVjvwzi6blYTGFQYBtBF9kCtuoQBmZtBB'
-  config.access_token_secret = '8XQTvaSmGItTWe1fRB2FKDEbnwrm3KJ3uJEdUjDK3VXPC'
-end
 
 SCHEDULER.every '10m', :first_in => 0 do |job|
   begin
+#### Get your twitter keys & secrets:
+#### https://dev.twitter.com/docs/auth/tokens-devtwittercom
+    twitter = Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token = ENV['TWITTER_ACCESS_TOKEN']
+      config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
+    end
+
     tweets = twitter.search("Tesla Model 3")
 
     if tweets
