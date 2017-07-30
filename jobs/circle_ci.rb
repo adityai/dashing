@@ -57,7 +57,7 @@ def build_data(project, auth_token)
     state: "#{latest_build['status'].capitalize}",
     widget_class: "#{translate_status_to_class(latest_build['status'])}",
     committer_name: latest_build['committer_name'],
-    commit_body: "\"#{latest_build['body']}\"",
+    commit_body: "#{latest_build['body']}",
     avatar_url: "http://www.gravatar.com/avatar/#{email_hash}"
   }
   return data
