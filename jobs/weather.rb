@@ -23,13 +23,13 @@ SCHEDULER.every '15m', :first_in => 0 do |job|
   end
 
   client = Slack::Web::Client.new
-  puts client.auth_test
+  client.auth_test
 
   weather_data  = JSON.parse(response.body)
   detailed_info = weather_data['weather'].first
   current_temp  = weather_data['main']['temp'].to_f.round
 
-  puts client.chat_postMessage(channel: '@dashing-ai', text: current_temp, as_user: true)
+  client.chat_postMessage(channel: '@dashing-ai', text: current_temp, as_user: true)
 
   send_event('weather', { :temp => "#{current_temp} &deg;#{temperature_units}",
                           :condition => detailed_info['main'],
