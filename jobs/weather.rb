@@ -10,14 +10,12 @@ UNITS   = 'imperial'
 # create free account on open weather map to get API key
 API_KEY = ENV['WEATHER_KEY']
 
-
-SCHEDULER.every '15m', :first_in => 0 do |job|
+SCHEDULER.every '30m', :first_in => 0 do |job|
 
   http = Net::HTTP.new('api.openweathermap.org')
   response = http.request(Net::HTTP::Get.new("/data/2.5/weather?id=#{CITY_ID}&units=#{UNITS}&appid=#{API_KEY}"))
   next unless '200'.eql? response.code
 
-  puts ENV['SLACK_API_TOKEN']
   Slack.configure do |config|
     config.token = ENV['SLACK_API_TOKEN']
   end
@@ -27,9 +25,13 @@ SCHEDULER.every '15m', :first_in => 0 do |job|
 
   weather_data  = JSON.parse(response.body)
   detailed_info = weather_data['weather'].first
-  current_temp  = weather_data['main']['temp'].to_f.round
+  current_temp  = weather_data['main']['temp'].to_f
 
-  client.chat_postMessage(channel: '@dashing-ai', text: current_temp, as_user: true)
+if current_temp > 96 || current_temp < 65 then
+  slack_message = 'Temperature in Roseville is ' + current_temp.to_s
+
+  client.chat_postMessage(channel: '@adityai', text: slack_message, as_user: true)
+end
 
   send_event('weather', { :temp => "#{current_temp} &deg;#{temperature_units}",
                           :condition => detailed_info['main'],
