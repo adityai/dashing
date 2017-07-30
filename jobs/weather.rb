@@ -1,4 +1,5 @@
 require 'net/http'
+require 'slack-ruby-client'
 
 # you can find CITY_ID here http://bulk.openweathermap.org/sample/city.list.json.gz
 CITY_ID = 5388881
@@ -9,16 +10,26 @@ UNITS   = 'imperial'
 # create free account on open weather map to get API key
 API_KEY = ENV['WEATHER_KEY']
 
-SCHEDULER.every '5m', :first_in => 0 do |job|
+
+SCHEDULER.every '15m', :first_in => 0 do |job|
 
   http = Net::HTTP.new('api.openweathermap.org')
   response = http.request(Net::HTTP::Get.new("/data/2.5/weather?id=#{CITY_ID}&units=#{UNITS}&appid=#{API_KEY}"))
-
   next unless '200'.eql? response.code
+
+  puts ENV['SLACK_API_TOKEN']
+  Slack.configure do |config|
+    config.token = ENV['SLACK_API_TOKEN']
+  end
+
+  client = Slack::Web::Client.new
+  puts client.auth_test
 
   weather_data  = JSON.parse(response.body)
   detailed_info = weather_data['weather'].first
   current_temp  = weather_data['main']['temp'].to_f.round
+
+  puts client.chat_postMessage(channel: '@dashing-ai', text: current_temp, as_user: true)
 
   send_event('weather', { :temp => "#{current_temp} &deg;#{temperature_units}",
                           :condition => detailed_info['main'],

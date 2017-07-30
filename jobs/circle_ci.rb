@@ -65,7 +65,7 @@ end
 SCHEDULER.every '10s', :first_in => 0  do
   projects.each do |project|
     data_id = "circle-ci-#{project[:user]}-#{project[:repo]}-#{project[:branch]}"
-puts data_id
+#puts data_id
     data = build_data(project, ENV['CIRCLE_CI_AUTH_TOKEN'])
     send_event(data_id, data) unless data.empty?
   end
