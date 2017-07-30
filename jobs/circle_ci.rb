@@ -2,6 +2,7 @@ require 'httparty'
 require 'digest/md5'
 
 projects = [
+  { user: 'adityai', repo: 'dashing', branch: 'master' },
   { user: 'adityai', repo: 'mozaik-demo', branch: 'master' },
   { user: 'adityai', repo: 'jenkinsElastic-Docker', branch: 'master' }
 ]
