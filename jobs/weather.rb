@@ -28,7 +28,7 @@ SCHEDULER.every '30m', :first_in => 0 do |job|
   current_temp  = weather_data['main']['temp'].to_f
 
 if current_temp > 96 || current_temp < 65 || current_temp < 80 then
-  slack_message = 'Current temperature in Roseville is ' + current_temp.to_s
+  slack_message = 'Current temperature in Roseville is ' + current_temp.to_s + '. ' + detailed_info
 
   client.chat_postMessage(channel: '@adityai', text: slack_message, as_user: true)
 end
