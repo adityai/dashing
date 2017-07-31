@@ -3,7 +3,7 @@ require 'forecast_io'
 SCHEDULER.every '15m', :first_in => 0 do |job|
 
   ForecastIO.configure do |c|
-    c.api_key = "79aceb2278fc9ee29c4d89b5b9a9850f"
+    c.api_key = ENV['DARKSKY_SECRET_KEY']
   end
 
   forecast = ForecastIO.forecast(38.7521, -121.2880)
