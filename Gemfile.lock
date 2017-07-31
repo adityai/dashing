@@ -44,6 +44,10 @@ GEM
     faraday_middleware (0.12.0)
       faraday (>= 0.7.4, < 1.0)
     ffi (1.9.18)
+    forecast_io (2.0.1)
+      faraday
+      hashie
+      multi_json
     gli (2.16.0)
     google-api-client (0.13.1)
       addressable (~> 2.5, >= 2.5.1)
@@ -181,6 +185,7 @@ DEPENDENCIES
   circleci
   darksky
   dashing
+  forecast_io
   google-api-client (>= 0.8)
   httparty
   slack-ruby-client (~> 0.8.0)

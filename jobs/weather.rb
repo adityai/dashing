@@ -10,35 +10,33 @@ UNITS   = 'imperial'
 # create free account on open weather map to get API key
 API_KEY = ENV['WEATHER_KEY']
 
-SCHEDULER.every '30m', :first_in => 0 do |job|
+#SCHEDULER.every '30m', :first_in => 0 do |job|
 
-  http = Net::HTTP.new('api.openweathermap.org')
-  response = http.request(Net::HTTP::Get.new("/data/2.5/weather?id=#{CITY_ID}&units=#{UNITS}&appid=#{API_KEY}"))
-  next unless '200'.eql? response.code
+#  http = Net::HTTP.new('api.openweathermap.org')
+#  response = http.request(Net::HTTP::Get.new("/data/2.5/weather?id=#{CITY_ID}&units=#{UNITS}&appid=#{API_KEY}"))
+#  next unless '200'.eql? response.code
 
-  Slack.configure do |config|
-    config.token = ENV['SLACK_API_TOKEN']
-  end
+#  Slack.configure do |config|
+#    config.token = ENV['SLACK_API_TOKEN']
+#  end
 
-  client = Slack::Web::Client.new
+#  client = Slack::Web::Client.new
 
-  weather_data  = JSON.parse(response.body)
-  detailed_info = weather_data['weather'].first
-  current_temp  = weather_data['main']['temp'].to_f
+#  weather_data  = JSON.parse(response.body)
+#  detailed_info = weather_data['weather'].first
+#  current_temp  = weather_data['main']['temp'].to_f
 
-if (current_temp > 96) then
- # slack_message = 'Current temperature in Roseville is ' << current_temp.to_s << '. ' << detailed_info
-slack_message = "Current temperature is " << current_temp.to_s << ". " << detailed_info['description'].to_s
+#if (current_temp > 96) then
+# slack_message = "Current temperature is " << current_temp.to_s << ". " << detailed_info['description'].to_s
+#  client.chat_postMessage(channel: '@adityai', text: slack_message, as_user: true)
+#end
 
-  client.chat_postMessage(channel: '@adityai', text: slack_message, as_user: true)
-end
-
-  send_event('weather', { :temp => "#{current_temp} &deg;#{temperature_units}",
-                          :condition => detailed_info['main'],
-                          :title => "#{weather_data['name']} Weather",
-                          :color => color_temperature(current_temp),
-                          :climacon => climacon_class(detailed_info['id'])})
-end
+#  send_event('weather', { :temp => "#{current_temp} &deg;#{temperature_units}",
+#                          :condition => detailed_info['main'],
+#                          :title => "#{weather_data['name']} Weather",
+#                          :color => color_temperature(current_temp),
+#                          :climacon => climacon_class(detailed_info['id'])})
+#end
 
 
 def temperature_units

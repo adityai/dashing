@@ -7,4 +7,4 @@ gem 'google-api-client', '>= 0.8'
 gem 'slack-ruby-client', '~> 0.8.0'
 gem 'stock_quote', '~> 1.3.0'
 gem 'darksky'
-
+gem 'forecast_io'
