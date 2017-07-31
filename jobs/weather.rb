@@ -21,14 +21,14 @@ SCHEDULER.every '30m', :first_in => 0 do |job|
   end
 
   client = Slack::Web::Client.new
-  client.auth_test
 
   weather_data  = JSON.parse(response.body)
   detailed_info = weather_data['weather'].first
   current_temp  = weather_data['main']['temp'].to_f
 
 if (current_temp > 96) then
-  slack_message = 'Current temperature in Roseville is ' + current_temp.to_s + '. ' + detailed_info
+ # slack_message = 'Current temperature in Roseville is ' << current_temp.to_s << '. ' << detailed_info
+slack_message = "Current temperature is " << current_temp.to_s << ". " << detailed_info['description'].to_s
 
   client.chat_postMessage(channel: '@adityai', text: slack_message, as_user: true)
 end
