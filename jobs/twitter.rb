@@ -16,7 +16,7 @@ puts "Testing tweets"
 tweets = twitter.home_timeline
     if tweets
       tweets = tweets.map do |tweet|
-        { name: tweet.user.name, body: tweet.text, avatar: tweet.user.profile_image_url_https }
+        { name: tweet.user.name, body: tweet.text}
       end
       send_event('twitter_ai', comments: tweets)
     end
