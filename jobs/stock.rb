@@ -9,5 +9,5 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
 
   send_event('aapl', {text: "Ask: $" + appl.ask.to_s + " Bid: $" + appl.bid.to_s, title: "Apple"})
   send_event('tsla', {text: "Ask: $" + tsla.ask.to_s + " Bid: $" + tsla.bid.to_s, title: "Tesla"})
-  send_event('race', {text: "Ask: $" + race.ask.to_s + " Bid: $" + race.bid.to_s, title: "Ferrari})
+  send_event('race', {text: "Ask: $" + race.ask.to_s + " Bid: $" + race.bid.to_s, title: "Ferrari"})
 end
