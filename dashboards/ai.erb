@@ -2,8 +2,8 @@
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
   //Dashing.gridsterLayout('[{"col":2,"row":1},{"col":1,"row":1},{"col":3,"row":1},{"col":2,"row":2},{"col":3,"row":2},{"col":1,"row":2},{"col":5,"row":1},{"col":4,"row":2},{"col":2,"row":3}]')
-  //Dashing.widget_base_dimensions = [370, 340]
-  // Dashing.numColumns = 4
+  Dashing.widget_base_dimensions = [370, 340]
+  Dashing.numColumns = 4
 });
 </script>
 
@@ -17,34 +17,40 @@ $(function() {
       <i class="fa fa-clock-o icon-background"></i>
     </li>
 
-    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="circle-ci-adityai-dashing-master" data-view="CircleCi" data-title="dashing"></div>
     </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="circle-ci-adityai-mozaik-demo-master" data-view="CircleCi" data-title="mozaik-demo"></div>
+    </li>
 
-    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="circle-ci-adityai-jenkinsElastic-Docker-master" data-view="CircleCi" data-title="jenkinsElastic-Docker"></div>
     </li>
 
-    <li data-row="1" data-col=4" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="weather" data-view="Weather"></div>
     </li>
 
-    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="aapl" data-view="Text" style="background-color:#77dde6;" data-moreinfo="AAPL"></div>
     </li>
 
-    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="tsla" data-view="Text" style="background-color:#77dde6;" data-moreinfo="TSLA"></div>
     </li>
 
-    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="race" data-view="Text" style="background-color:#77dde6;" data-moreinfo="RACE></div>
     </li>
 
-    <li data-row="3" data-col="1" data-sizex="4" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
       <div data-id="twitter_ai" data-view="Comments" style="background-color:#83d6ff;" data-moreinfo="@AdityaInapurapu"></div>
       <i class="fa fa-twitter icon-background"></i>
     </li>
 
+
+
   </ul>
+  <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
 </div>
