@@ -16,9 +16,9 @@ puts "Testing tweets"
 tweets = twitter.home_timeline
     if tweets
       tweets = tweets.map do |tweet|
-        { name: tweet.user.name, body: tweet.text}
+        { name: tweet.user.name, body: tweet.text, url: tweet.uri}
       end
-      send_event('twitter_ai', {comments: tweets, moreinfo: tweet.uri})
+      send_event('twitter_ai', comments: tweets)
     end
   rescue Twitter::Error
     puts "\e[33mFor the twitter widget to work, you need to put in your twitter API keys in the jobs/twitter.rb file.\e[0m"
