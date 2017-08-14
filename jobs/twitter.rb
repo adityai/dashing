@@ -18,7 +18,7 @@ tweets = twitter.home_timeline
       tweets = tweets.map do |tweet|
         { name: tweet.user.name, body: tweet.text}
       end
-      send_event('twitter_ai', comments: tweets, moreinfo: tweet.uri)
+      send_event('twitter_ai', {comments: tweets, moreinfo: tweet.uri})
     end
   rescue Twitter::Error
     puts "\e[33mFor the twitter widget to work, you need to put in your twitter API keys in the jobs/twitter.rb file.\e[0m"
