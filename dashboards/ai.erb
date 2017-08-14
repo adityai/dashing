@@ -17,26 +17,10 @@ $(function() {
       <i class="fa fa-clock-o icon-background"></i>
     </li>
 
-<!--
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new 1080p dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="twitter_ai" data-view="Comments" style="background-color:#83d6ff;" data-moreinfo="@AdityaInapurapu"></div>
+      <i class="fa fa-twitter icon-background"></i>
     </li>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-title="Synergy" data-min="0" data-max="100"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-moreinfo="In sync with my neighbour!" data-title="Synergy" data-min="0" data-max="100"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-      <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Buzzwords" data-moreinfo="# of times said around the office"></div>
-    </li>
-    
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#47bbb3;"></div>
-    </li>
--->
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="circle-ci-adityai-dashing-master" data-view="CircleCi" data-title="dashing"></div>
@@ -65,10 +49,6 @@ $(function() {
       <div data-id="race" data-view="Text" style="background-color:#77dde6;" data-moreinfo="RACE></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
-      <div data-id="twitter_ai" data-view="Comments" style="background-color:#83d6ff;" data-moreinfo="@AdityaInapurapu"></div>
-      <i class="fa fa-twitter icon-background"></i>
-    </li>
   </ul>
   <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>
 </div>
