@@ -15,7 +15,7 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
 tweets = twitter.home_timeline
     if tweets
       tweets = tweets.map do |tweet|
-        { name: tweet.user.name, body: tweet.text + ' ' + tweet.uri, moreinfo: tweet.uri}
+        { name: tweet.user.name, body: tweet.text + ' ' + tweet.uri, url: tweet.uri}
       end
       send_event('twitter_ai', comments: tweets)
     end

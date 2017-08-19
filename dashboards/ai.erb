@@ -5,6 +5,17 @@
         Dashing.widget_base_dimensions = [370, 340]
         Dashing.numColumns = 5
     });
+
+    $(function bringToTop() {
+        $('li').live('click', function(e){
+            var widget = $(this).find('.widget');
+            if(widget.data('url')){
+                var url = widget.data('url');
+                var win = window.open(url, '_blank');
+                win.focus();
+            }
+        });
+    });
 </script>
 
 
@@ -33,36 +44,36 @@
       <div data-id="weatherTahoe" data-view="Weather"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="5" data-sizey="1">
-      <div data-id="twitter_ai" data-view="Comments" style="background-color:#83d6ff;"></div>
+    <li data-row="2" data-col="1" data-sizex="5" data-sizey="1" >
+      <div data-id="twitter_ai" data-view="Comments" data-url="https://www.twitter.com" style="background-color:#83d6ff;"></div>
       <i class="fa fa-twitter icon-background"></i>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="aapl" data-view="Text" style="background-color:#77dde6;" data-moreinfo="AAPL"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="tsla" data-view="Text" style="background-color:#77dde6;" data-moreinfo="TSLA"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="race" data-view="Text" style="background-color:#77dde6;" data-moreinfo="RACE"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="amzn" data-view="Text" style="background-color:#77dde6;" data-moreinfo="AMZN"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="fb" data-view="Text" style="background-color:#77dde6;" data-moreinfo="FB"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="xom" data-view="Text" style="background-color:#77dde6;" data-moreinfo="XOM"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="msft" data-view="Text" style="background-color:#77dde6;" data-moreinfo="MSFT"></div>
     </li>
 
