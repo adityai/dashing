@@ -10,7 +10,6 @@ SCHEDULER.every '10m', :first_in => 0 do |job|
       config.access_token = ENV['TWITTER_ACCESS_TOKEN']
       config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
-puts "Testing tweets"
 
     #tweets = twitter.search("Tesla Model 3")
 tweets = twitter.home_timeline
