@@ -8,4 +8,5 @@ gem 'slack-ruby-client', '~> 0.8.0'
 gem 'stock_quote', '~> 1.3.0'
 gem 'forecast_io'
 gem 'nest_thermostat'
+gem 'bart', github: 'cannuk/bart', branch: 's-update-destination-query'
 

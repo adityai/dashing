@@ -42,5 +42,17 @@ SCHEDULER.every '15m', :first_in => 0 do |job|
                             :title => "South Lake Tahoe, CA"
                         })
 
+  forecast = ForecastIO.forecast(37.7912557,-122.3985874)
+  current_temperature = forecast['currently']['temperature']
+  current_icon = forecast['currently']['icon']
+
+  send_event('weatherSFO', { :temp => "#{current_temperature} &deg;F",
+                               #:condition => detailed_info['main'],
+                               #:title => "#{weather_data['name']} Weather",
+                               #:color => color_temperature(current_temp),
+                               :climacon => "#{current_icon}",
+                               :title => "50 Beale Street, San Francisco, CA"
+  })
+
 end
 

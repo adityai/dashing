@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/cannuk/bart.git
+  revision: e0e06899f98abd50f190604afe9b7e472bba81ea
+  branch: s-update-destination-query
+  specs:
+    bart (0.0.1)
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -87,6 +95,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mini_portile2 (2.2.0)
     minitest (5.10.3)
     multi_json (1.12.1)
     multi_xml (0.6.0)
@@ -95,6 +104,8 @@ GEM
     nest_thermostat (0.0.4)
       httparty (~> 0.8.3)
     netrc (0.11.0)
+    nokogiri (1.8.0)
+      mini_portile2 (~> 2.2.0)
     os (0.9.6)
     public_suffix (2.0.5)
     rack (1.5.5)
@@ -178,6 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bart!
   circleci
   dashing
   forecast_io
