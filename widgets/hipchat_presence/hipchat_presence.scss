@@ -1,0 +1,65 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color-chat: rgb(40, 185, 61);
+$background-color-away: rgb(27, 91, 204);
+$background-color-dnd: rgb(249, 46, 25);
+$background-color-xa: rgb(244, 151, 9);
+$background-color-offline: rgb(204, 204, 204);
+
+$label-color:       rgba(255, 255, 255, 0.7);
+$label-small-color: rgba(222, 222, 222, 0.70);
+
+// ----------------------------------------------------------------------------
+// Widget-hipchat_presence styles
+// ----------------------------------------------------------------------------
+.widget-hipchat-presence {
+
+  background-color: $background-color-offline;
+  vertical-align: top;
+
+  .userinfo {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+
+    img {
+      border-radius: 10px;
+      margin: 5px;
+    }
+  }
+
+  .label {
+    text-align: center;
+    display: block;
+    color: $label-color;
+    font-size: 24px;
+    word-wrap: break-word;
+
+    &.small {
+      font-size: 18px;
+      color: $label-small-color;
+    }
+  }
+
+
+  &.status-chat{
+    background-color: $background-color-chat;
+  }
+
+  &.status-away {
+    background-color: $background-color-away;
+  }
+
+  &.status-dnd {
+    background-color: $background-color-dnd;
+  }
+
+  &.status-xa {
+    background-color: $background-color-xa;
+  }
+
+  &.status-offline {
+    background-color: $background-color-offline;
+  }
+}
