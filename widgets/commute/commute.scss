@@ -1,0 +1,35 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #ec663c;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-commute styles
+// ----------------------------------------------------------------------------
+.widget-commute {
+
+  background-color: $background-color;
+
+  .title {
+    color: $title-color;
+  }
+
+  .warnings {
+    color: $moreinfo-color;
+  }
+
+  .updated-at {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &.large h3 {
+    font-size: 65px;
+  }
+
+  &.large h2 {
+    font-size: 55px;
+  }
+}
