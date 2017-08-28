@@ -12,21 +12,10 @@ $(function() {
 <% content_for :title do %>My super sweet dashboard<% end %>
 <div class="gridster">
     <ul>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="weather" data-view="Weather"></div>
-    </li>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="weatherSantaCruz" data-view="Weather"></div>
-    </li>
 
-      <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-view="Clock"></div>
-      <i class="fa fa-clock-o icon-background"></i>
-    </li>
       <li data-row="1 data-col="1" data-sizex="1" data-sizey="1">
         <div data-id="adityainapurapu@hipchat.com" data-view="HipchatPresence"></div>
       </li>
-<!--
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new 1080p dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
     </li>
@@ -43,30 +32,18 @@ $(function() {
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
       <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#47bbb3;"></div>
     </li>
--->
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="circle-ci-adityai-dashing-master" data-view="CircleCi" data-title="dashing"></div>
+    <li data-row="3" data-col="1" data-sizex="3" data-sizey="1">
+      <div data-id="daily_dilbert" data-view="Image" data-width="100%"></div>
     </li>
-
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="aapl" data-view="Text" style="background-color:#77dde6;" data-moreinfo="AAPL"></div>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" onclick="location.href='https://registry.hub.docker.com/repos/emccode/';">
+      <div data-id="docker_hub_stars" data-view="List" data-unordered="true" data-title="Docker stars" style="background-color: #9b59b6"></div>
+      <i class="icon-star icon-background"></i>
     </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="tsla" data-view="Text" style="background-color:#77dde6;" data-moreinfo="TSLA"></div>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" onclick="location.href='https://registry.hub.docker.com/repos/emccode/';">
+      <div data-id="docker_hub_pulls" data-view="List" data-unordered="true" data-title="Docker pulls" style="background-color: #9b59b6"></div>
+      <i class="icon-download icon-background"></i>
     </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="msft" data-view="Text" style="background-color:#77dde6;" data-moreinfo="MSFT"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
-      <div data-id="twitter_ai" data-view="Comments" style="background-color:#83d6ff;" data-moreinfo="@AdityaInapurapu"></div>
-      <i class="fa fa-twitter icon-background"></i>
-    </li>
-
 
 
   </ul>
