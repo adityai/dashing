@@ -2,7 +2,7 @@ require 'stock_quote'
 
 
 
-SCHEDULER.every '1m', :first_in => 0 do |job|
+SCHEDULER.every '2m', :first_in => 0 do |job|
   appl = StockQuote::Stock.quote("aapl")
   tsla = StockQuote::Stock.quote("tsla")
   race = StockQuote::Stock.quote("race")
