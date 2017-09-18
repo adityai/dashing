@@ -21,5 +21,5 @@ SCHEDULER.every '2m', :first_in => 0 do |job|
 #  send_event('xom', {text: "Ask: $" + xom.ask.to_s + " Bid: $" + xom.bid.to_s, title: "Exxon"})
 #  send_event('msft', {text: "Ask: $" + msft.ask.to_s + " Bid: $" + msft.bid.to_s, title: "Microsoft"})
 #  send_event('spy', {text: "Ask: $" + spy.ask.to_s + " Bid: $" + spy.bid.to_s, title: "SPY"})
-  send_event('v', {text: "Ask: $" + spy.ask.to_s + " Bid: $" + spy.bid.to_s, title: "V"})
+  send_event('v', {text: "Ask: $" + v.ask.to_s + " Bid: $" + v.bid.to_s, title: "V"})
 end
