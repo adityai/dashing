@@ -8,7 +8,7 @@ require 'bart/station'
 #    {abbr: "embr", dir: "s"}
 DEPART_STATION = {abbr: "embr"}
 #Filter the list of destination estimates from the depart stations to the following stations
-DESTINATION_STATIONS = ["mlbr", "daly", "dubl", "frmt", "pitt", "rich"]
+DESTINATION_STATIONS = ["mlbr", "daly", "dubl", "frmt", "pitt", "rich", "warm"]
 #
 UPDATE = '5m' #This is how often we query the BART API.
 UPDATE_DISPLAY = '10s' #This is how often we update the display on the dashboard.
