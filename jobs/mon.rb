@@ -18,10 +18,16 @@ SCHEDULER.every '5m', :first_in => 0 do |job|
     send_event('portal_sfo_dev', { message: "", status:"warning" })
   end
 
-  if counter == 8
+  if counter == 9
     send_event('portal_sfo_dev', { message: "", status:"unknown" })
     counter = 0
   end
-counter = counter + 1
+
+  if counter == 11
+    send_event('portal_sfo_dev', { message: "", status:"deployment in progress" })
+    counter = 0
+  end
+
+  counter = counter + 1
   puts counter
 end
