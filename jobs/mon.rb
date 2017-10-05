@@ -1,6 +1,6 @@
 counter = 0
 
-SCHEDULER.every '5m', :first_in => 0 do |job|
+SCHEDULER.every '12s', :first_in => 0 do |job|
 
   if counter == 0
     send_event('portal_sfo_dev', { message: "Smoke-free", status:"ok" })
