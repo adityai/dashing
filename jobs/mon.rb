@@ -3,28 +3,20 @@ counter = 0
 SCHEDULER.every '5m', :first_in => 0 do |job|
 
   if counter == 0
-    send_event('portal_sfo_dev', { message: "", status:"ok" })
+    send_event('portal_sfo_dev', { message: "Smoke-free", status:"ok" })
   end
 
   if counter == 2
-    send_event('portal_sfo_dev', { message: "", status:"warning" })
+    send_event('portal_sfo_dev', { message: "In progress", status:"deployment" })
   end
 
   if counter == 5
-    send_event('portal_sfo_dev', { message: "", status:"critical" })
+    send_event('portal_sfo_dev', { message: "Smokey", status:"critical" })
   end
 
-  if counter == 7
-    send_event('portal_sfo_dev', { message: "", status:"warning" })
-  end
 
   if counter == 9
-    send_event('portal_sfo_dev', { message: "", status:"unknown" })
-    counter = 0
-  end
-
-  if counter == 11
-    send_event('portal_sfo_dev', { message: "", status:"deployment in progress" })
+    send_event('portal_sfo_dev', { message: "Foobar", status:"unknown" })
     counter = 0
   end
 
