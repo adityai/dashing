@@ -7,7 +7,7 @@ class Dashing.HotStatus extends Dashing.Widget
     return if not @status
     status = @status.toLowerCase()
 
-    if [ 'critical', 'warning', 'ok', 'unknown' ].indexOf(status) != -1
+    if [ 'critical', 'deployment', 'ok', 'unknown' ].indexOf(status) != -1
       backgroundClass = "hot-status-#{status}"
     else
       backgroundClass = "hot-status-neutral"
