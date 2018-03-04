@@ -2,8 +2,8 @@ require 'stock_quote'
 
 
 
-SCHEDULER.every '2m', :first_in => 0 do |job|
-  appl = StockQuote::Stock.quote("aapl")
+#SCHEDULER.every '2m', :first_in => 0 do |job|
+#  appl = StockQuote::Stock.quote("aapl")
 #  tsla = StockQuote::Stock.quote("tsla")
 #  race = StockQuote::Stock.quote("race")
 #  amzn = StockQuote::Stock.quote("amzn")
@@ -13,7 +13,7 @@ SCHEDULER.every '2m', :first_in => 0 do |job|
 #  spy = StockQuote::Stock.quote("spy")
 #  v = StockQuote::Stock.quote("v")
 
-  send_event('aapl', {text: "Ask: $" + appl.ask.to_s + " Bid: $" + appl.bid.to_s, title: "Apple"})
+#  send_event('aapl', {text: "Ask: $" + appl.ask.to_s + " Bid: $" + appl.bid.to_s, title: "Apple"})
 #  send_event('tsla', {text: "Ask: $" + tsla.ask.to_s + " Bid: $" + tsla.bid.to_s, title: "Tesla"})
 #  send_event('race', {text: "Ask: $" + race.ask.to_s + " Bid: $" + race.bid.to_s, title: "Ferrari"})
 #  send_event('amzn', {text: "Ask: $" + amzn.ask.to_s + " Bid: $" + amzn.bid.to_s, title: "Amazon"})
@@ -22,4 +22,4 @@ SCHEDULER.every '2m', :first_in => 0 do |job|
 #  send_event('msft', {text: "Ask: $" + msft.ask.to_s + " Bid: $" + msft.bid.to_s, title: "Microsoft"})
 #  send_event('spy', {text: "Ask: $" + spy.ask.to_s + " Bid: $" + spy.bid.to_s, title: "SPY"})
 #  send_event('v', {text: "Ask: $" + v.ask.to_s + " Bid: $" + v.bid.to_s, title: "V"})
-end
+#end
