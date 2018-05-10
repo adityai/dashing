@@ -1,3 +1,4 @@
-test:
-  override:
-- echo "Hello"
+version: 2
+jobs:
+  build:
+    bundle install & dashing start
