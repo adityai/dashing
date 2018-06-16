@@ -30,18 +30,18 @@ ping_count = 10
 #
 servers = [
     {name: 'prod-appserver', url: '172.217.26.206', method: 'ping'},
-    {name: 'prod-app', url: 'https://www.google.com', method: 'https'},
-    {name: 'stage-app', url: 'https://reddit.com/', method: 'https'},
-    {name: 'stage-appserver', url: '72.52.4.119', method: 'ping'},
-    {name: 'prod-app', url: 'https://www.github.com/', method: 'https'},
+    {name: 'prod-app', url: 'http://www.google.com/', method: 'http'},
+    {name: 'stage-app', url: 'http://www.google.com/', method: 'http'},
+    {name: 'stage-appserver', url: '172.217.26.206', method: 'ping'},
+    {name: 'prod-app', url: 'http://www.github.com/', method: 'http'},
     {name: 'prod-appserver', url: '192.30.253.113', method: 'ping'},
-    {name: 'dev-app', url: 'https://www.github.com/', method: 'https'},
+    {name: 'dev-app', url: 'http://www.github.com/', method: 'http'},
     {name: 'dev-appserver', url: '192.30.253.113', method: 'ping'},
-    {name: 'test-app', url: 'https://www.github.com/', method: 'https'},
+    {name: 'test-app', url: 'http://www.github.com/', method: 'http'},
     {name: 'test-appserver', url: '192.30.253.113', method: 'ping'},
 ]
  
-SCHEDULER.every '1m', :first_in => 0 do |job|
+SCHEDULER.every '2m', :first_in => 0 do |job|
     servers.each do |server|
         if server[:method] == 'http'
             begin
