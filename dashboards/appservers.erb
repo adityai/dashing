@@ -1,0 +1,53 @@
+<script type='text/javascript'>
+$(function() {
+  Dashing.widget_base_dimensions = [275, 170]
+  Dashing.numColumns = 5
+});
+</script>
+
+<% content_for :title do %>App Server Status<% end %>
+
+<div class="gridster">
+    <ul>
+        <li data-row="1" data-col="4" data-sizex="2" data-sizey="1">
+            <div data-view="Clock" style="background-color: #3D88A7"></div>
+		<i class="icon-time icon-background"></i>
+        </li>
+
+        <li data-row="1" data-col="1" data-sizex="3" data-sizey="1">
+            <div data-id="welcome" data-view="Text" data-title="App Server Status" data-moreinfo="Your awesome team name here!" style="background-color: #6D5B97"></div>
+        </li>
+
+        <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="test-app" data-view="ServerStatusSquares" data-title="Test" onclick="location.href='https://www.github.com'"></div>
+        </li>
+        <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="test-appserver" data-view="ServerStatusSquares" data-title="Test" onclick="location.href='https://www.github.com'"></div>
+        </li>
+        <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+            <div data-id="stage-app" data-view="ServerStatusSquares" data-title="Stage" onclick="location.href='https://reddit.com'"></div>
+        </li>
+        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+            <div data-id="stage-appserver" data-view="ServerStatusSquares" data-title="Stage"  onclick="location.href='https://reddit.com'"></div>
+        </li>
+        <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+            <div data-id="prod-app" data-view="ServerStatusSquares" data-title="Prod" onclick="location.href='https://www.google.com'"></div>
+        </li>
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+            <div data-id="prod-appserver" data-view="ServerStatusSquares" data-title="Prod"  onclick="location.href='https://www.google.com'"></div>
+        </li>
+        <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="dev-app" data-view="ServerStatusSquares" data-title="Dev"  onclick="location.href='https://www.github.com'"></div>
+	</li>
+        <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="dev-appserver" data-view="ServerStatusSquares" data-title="Dev" onclick="location.href='https://www.google.com'"></div>
+	</li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="App" data-view="Text" data-title="App" data-moreinfo="https" style="background-color: #345A99"></div>
+	</li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="Servers" data-view="Text" data-title="Server" data-moreinfo="ping" style="background-color: #345A99"></div>
+	</li>
+
+    </ul>
+</div>
