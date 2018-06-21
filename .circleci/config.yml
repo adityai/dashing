@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: sudo apt-get install -y node
+      - run: gem install bundler stock_quote
+      - run: bundle config git.allow_insecure true
+      - run: bundle install
+      
