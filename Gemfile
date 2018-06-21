@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'sprockets'
 gem 'dashing'
 gem 'twitter', '>= 5.9.0'
 gem 'circleci'
