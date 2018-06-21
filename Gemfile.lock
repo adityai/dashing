@@ -38,7 +38,7 @@ GEM
       sass (~> 3.2.12)
       sinatra (~> 1.4.4)
       sinatra-contrib (~> 1.4.2)
-      sprockets (~> 2.10.1)
+      sprockets (~> 2.12.5)
       thin (~> 1.6.1)
       thor (> 0.18.1)
     declarative (0.0.9)
@@ -184,7 +184,7 @@ GEM
       hashie
       json
       websocket-driver
-    sprockets (2.10.2)
+    sprockets (2.12.5)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
