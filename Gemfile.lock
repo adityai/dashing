@@ -240,7 +240,8 @@ DEPENDENCIES
   nokogiri
   rMeetup
   slack-ruby-client (~> 0.8.0)
-  stock_quote (~> 1.3.0)
+  sprockets
+  stock_quote
   twitter (>= 5.9.0)
 
 BUNDLED WITH
