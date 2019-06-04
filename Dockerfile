@@ -1,14 +1,13 @@
-FROM ruby:2.2.2
+FROM ruby
 
 ADD . /app
 
 WORKDIR /app
 
-RUN apt-get update -y && apt-get install -y nodejs 
-RUN gem install bundler
+RUN apt-get update -y && apt-get install -y nodejs redis-server
+RUN gem install bundler dashing
 
 RUN bundle install 
 
-EXPOSE 3030, 443, 80
 CMD dashing start &
 
